@@ -8,3 +8,4 @@ console.log(nombreAlumno)
 // existe una tecnica donde abreviamos e inicialzamos una variable en una sola linea de codigo
 let edadAlumno=50
 const PI=3.1416
+
