@@ -76,12 +76,97 @@ Son aquellos que evaluan tres valores y retornan un solo valor
 Javascript nos permite crear caminos alternativos en nuestros programas dependiendo de una decision, a esto se le conoce como caminos o ejecucion condicional, que ejecutara una sentencia u otra teniendo encuenta la condicion asi podemos crear multiples caminos u opciones en nuestro programa.
 Si tenemos una decision verdadera se ejecutara una sentencia, si tenemos una codicion falsa se ejecutara otra sentencia totalmente distinta.
 > [!TIP]
-> La ejecución condiiconal rompe el flujo normal de un programa
+> La ejecución condicional rompe el flujo normal de un programa
 
 >### Bucles (for) - (tarea)
+El bucle `for` se utiliza para repetir una acción un número determinado de veces. Es útil cuando conocemos cuántas veces queremos que se repita el bloque de código.
+**Ejemplo:**
+```js
+for (let i = 0; i < 5; i++) {
+    console.log("Iteración número " + i);
+}
+```
 >### Bucles (while) (tarea)
+El bucle `while` repite un bloque de código mientras una condición sea verdadera. Es útil cuando no sabemos cuántas veces se repetirá el ciclo.
+**Ejemplo:**
+```js
+let contador = 0;
+while (contador < 5) {
+    console.log("Contador es " + contador);
+    contador++;
+}
+```
 ## 5. FUNCIONES
-## 6. MÉTODOS PARA TRABAJAR CON DATOS ESTRUCTURADOS (tarea)
+Las funciones en Javascrip son bloques de codigo que se ejecutan de manera independiente, podemos decir tambien que son mminprogramas que todas como entrada y retornan otros datos como salida.
+
+Las funciones son fundamentales para el correcto ordenamiento de nuestro codigo ademas que nos permiten separar de una manera mas ordenada nuestra logica y evitar repetir el codigo muchas veces.
+### TIPOS DE FUNCIONES
+>#### FUNCION POR DECLARACION
+Se define usando la palabra clave `function` y pueden ser llamadas antes de su declaracion
+```js
+function saludo(){
+    return
+}
+console.log(saludo)
+```
+>#### FUNCION POR EXPRESION
+Se asigna a una variable y solo pueden ser llamadas despues de su definicion
+```js
+const despedir = function(nombre){
+    return `Adiós, ${nombre}`;
+}
+console.log(despedir("Juan"));
+```
+#### FUNCION FLECHA (arrow functions)
+Es una forma concisa y moderna de definir funciones en JavaScript. Se caracteriza por usar el símbolo => (flecha) en lugar de la palabra clave "function".
+```js
+const sumar = (a, b) => {
+    return a + b;
+}
+console.log(sumar(2, 3));
+```
+
+## 6. MÉTODOS PARA TRABAJAR CON DATOS ESTRUCTURADOS
+Son funciones que dan funcionalidades extras a los tipos de  datos en los cuales se aplica. Un metodo es antecedido por un tipo de datos y un punto.
+
+> **Ejemplo:**
+
+El ejemplo mas claro de un metodo es el `.lenght`, estos metodos no permite saber la cantidad de caracteres de un string.
+```js
+"hola".lenght //4
+[2,4,5,6,7].lenght //5
+```
+> [!TIP]
+> Los metodos en sun mayoria solo se aplican a tipos de datos string , listas y objetos, en su gran parte son aplicacdos para listas
+### METODOS PARA STRING
+- `lenght:` Devuelve la longitud de una cadena 
+  
+  ```js
+  len mensaje="hola como estan"
+  console.log(mensaje.length); //15
+  ```
+- `toLowerCase:` Devuelve una cadena en minuscula
+  
+  ```js
+  let mensaje="HOLA COMO ESTAN"
+  console.log(mensaje.toLowerCase()); //hola como estan
+  ```
+- `toUpperCase:` Devuelve una cadena en mayuscula
+  
+  ```js
+  let mensaje="hola como estan"
+  console.log(mensaje.toUpperCase()); //HOLA COMO ESTAN
+  ```   
+- `concat:` Une dos o mas cadenas
+  
+  ```js
+  let mensaje1="hola"
+  let mensaje2="como estan"
+  console.log(mensaje1.concat(" ",mensaje2)); //hola como estan
+  ```
+### METODOS PARA LISTAS
+
+### METODOS PARA OBJETOS
 ## 7. DOM
 ### Métodos para Arrays
 Son una forma común de almacenar datos estructurados como listas
