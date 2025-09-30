@@ -139,35 +139,83 @@ El ejemplo mas claro de un metodo es el `.lenght`, estos metodos no permite sabe
 > [!TIP]
 > Los metodos en sun mayoria solo se aplican a tipos de datos string , listas y objetos, en su gran parte son aplicacdos para listas
 ### METODOS PARA STRING
-- `lenght:` Devuelve la longitud de una cadena 
-  
+- `length:` Devuelve la longitud de una cadena o numero de caracteres que tiene
   ```js
-  len mensaje="hola como estan"
+  let mensaje="hola como estan"
   console.log(mensaje.length); //15
   ```
 - `toLowerCase:` Devuelve una cadena en minuscula
-  
   ```js
   let mensaje="HOLA COMO ESTAN"
   console.log(mensaje.toLowerCase()); //hola como estan
   ```
 - `toUpperCase:` Devuelve una cadena en mayuscula
-  
   ```js
   let mensaje="hola como estan"
   console.log(mensaje.toUpperCase()); //HOLA COMO ESTAN
   ```   
 - `concat:` Une dos o mas cadenas
-  
   ```js
   let mensaje1="hola"
   let mensaje2="como estan"
   console.log(mensaje1.concat(" ",mensaje2)); //hola como estan
   ```
+- `trim:` Elimina los espacios en blanco al inicio y al final de una cadena
+  ```js
+  let mensaje="   hola como estan   "
+  console.log(mensaje.trim()); //hola como estan
+  ```
+- `slice:` Extrae una parte de una cadena y devuelve una nueva cadena
+  ```js
+  let mensaje="hola como estan"
+  console.log(mensaje.slice(0,4)); //hola
+  ```
+- `split:` Divide una cadena en un array basandose en lo que se indique
+  ```js
+  let mensaje="hola como estan"
+  console.log(mensaje.split(" ")); //["hola","como","estan"]
+  ```
 ### METODOS PARA LISTAS
-
+#### Crear una lista
+  let numeros=[]
+  - `push:` Agrega uno o mas elementos al final de una lista
+    ```js
+    let listas = []
+    listas.push("manzana")
+    ```
+  - `unshift:` Agrega uno o mas elementos al inicio de una lista
+    ```js
+    let listas = []
+    listas.unshift("manzana")
+    ```
+  - `pop:` Elimina el último elemento de una lista
+    ```js
+    let frutas = ["manzana", "banana", "cereza"]
+    frutas.pop()
+    ```
+  - `shift:` Elimina el primer elemento de una lista
+    ```js
+    let frutas = ["manzana", "banana", "cereza"]
+    frutas.shift()
+    ```
+  - `splice:` Agrega o elimina elementos en una posición específica
+    ```js
+    let frutas = ["manzana", "banana", "cereza"]
+    frutas.splice(1, 1, "naranja") 
+    ```
+  - `delete:` Elimina un elemento de una lista
+    ```js
+    let frutas = ["manzana", "banana", "cereza"]
+    delete frutas[1]
+    ```
+  - `concat:` Une dos o mas listas  
+    ```js
+    let lista1 = ["manzana", "banana"]
+    let lista2 = ["cereza", "naranja"]
+    let lista3 = lista1.concat(lista2)
+    ```
 ### METODOS PARA OBJETOS
-## 7. DOM
+## 7. es6
 ### Métodos para Arrays
 Son una forma común de almacenar datos estructurados como listas
 - `map():` Crea un nuevo array aplicando una funcion a cada elemento.
@@ -182,6 +230,9 @@ Son una forma común de almacenar datos estructurados como listas
 Los objetos permite estructurar información como pares clave/valor
 - `object.keys():` Devuelve un array con las claves
 - `object.values():` Devuelve un array con las valores
-- `object.estries():` Devuelve un array de pares `[clave, valor]`
-- `object.assing():` Copia propiedades de uno o más objetos a otro
+- `object.entries():` Devuelve un array de pares `[clave, valor]`
+- `object.assign():` Copia propiedades de uno o más objetos a otro
 - `hasOwnProperty:` Verifica si una propiedad existe
+## 8. DOM (Document Object Model) (Modelo de objetos del documento)
+Es una interfaz de programación para documentos HTML y XML. Representa la página para que los programas puedan cambiar la estructura del documento, estilo y contenido. El DOM proporciona una representación estructurada del documento como un árbol de nodos y objetos, lo que permite a los lenguajes de programación interactuar con el contenido, la estructura y los estilos de la página web.
+Es una API del navegador que permite a los desarrolladores web manipular y actualizar dinámicamente el contenido, la estructura y el estilo de una página web sin necesidad de recargarla.
