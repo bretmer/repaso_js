@@ -214,25 +214,58 @@ El ejemplo mas claro de un metodo es el `.lenght`, estos metodos no permite sabe
     let lista2 = ["cereza", "naranja"]
     let lista3 = lista1.concat(lista2)
     ```
+#### METODOS PARA ITERAR ELEMENTOS DE UNA LISTA
+  - `forEach:` Ejecuta una función anónima por cada elemento de un array
+    ```js
+    let frutas = ["manzana", "banana", "cereza"]
+    frutas.forEach(fruta => {console.log(fruta)}) //manzana, banana, cereza
+    ```
+  - `map:` Crea un nuevo array aplicando una función a cada elemento
+    ```js
+    let frutas = ["manzana", "banana", "cereza"]
+    let longitudes = frutas.map(fruta => fruta.length)
+    console.log(longitudes) // [7, 6, 6]
+    ```
+#### METODOS PARA BUSCAR ELEMENTOS EN UNA LISTA
+  - `includes:` Verifica si un elemento existe en una lista y devuelve `true` o `false`
+    ```js
+    let frutas = ["manzana", "banana", "cereza"]
+    console.log(frutas.includes("banana")) //true
+    ```
+  - `filter:` Crea un nuevo array con los elementos que cumplan una condición
+    ```js
+    let numeros = [1, 2, 3, 4, 5]
+    let numerosMenores= numeros.filter(numero => numero < 3)
+    console.log(numerosMenores) // [1, 2]
+    ```
+  - `find:` Retorna el primer elemento que cumpla una condición
+    ```js
+    let numeros = [1, 2, 3, 4, 5]
+    let primerNumeroMenorQueTres = numeros.find(numero => numero < 3)
+    console.log(primerNumeroMenorQueTres) // 2
+    ```
 ### METODOS PARA OBJETOS
+#### CRAENDO UN OBJETO 
+```js
+// objeto o diccionario vacio
+let persona = {}
+```
+#### COMO AGREGAR ELEMENTOS A UN OBJETO
+```js
+// Agregar propiedades
+persona[nombre] = "Juan"
+persona[edad] = 30
+persona[hobbies] = ["futbol"]
+```
+#### ACTUALIZAR ELEMENTOS DE UN OBJETO
+```js
+persona[nombre] = "Pedro" // Actualiza el nombre a "Pedro"
+```
+#### ELIMINAR ELEMENTOS DE UN OBJETO
+```js
+delete persona[edad] // Elimina la propiedad "edad"
+```
 ## 7. es6
-### Métodos para Arrays
-Son una forma común de almacenar datos estructurados como listas
-- `map():` Crea un nuevo array aplicando una funcion a cada elemento.
-- `filter():` Crea un nuevo array con los elementos que cumpla una función
-- `reduce():` Reduce los elementos a un solo valor
-- `find():` Retorna el primer elemento que cumpla una condición
-- `some():` Devuelve `True` si al menos uno cumple una condición
-- `every():` Devuelve `True` si todos cumplen la condición
-- `flat():` Aplana arrays anidados
-- `sort():` Ordena los elementos
-### Métodos para objetos
-Los objetos permite estructurar información como pares clave/valor
-- `object.keys():` Devuelve un array con las claves
-- `object.values():` Devuelve un array con las valores
-- `object.entries():` Devuelve un array de pares `[clave, valor]`
-- `object.assign():` Copia propiedades de uno o más objetos a otro
-- `hasOwnProperty:` Verifica si una propiedad existe
 ## 8. DOM (Document Object Model) (Modelo de objetos del documento)
 Es una interfaz de programación para documentos HTML y XML. Representa la página para que los programas puedan cambiar la estructura del documento, estilo y contenido. El DOM proporciona una representación estructurada del documento como un árbol de nodos y objetos, lo que permite a los lenguajes de programación interactuar con el contenido, la estructura y los estilos de la página web.
 Es una API del navegador que permite a los desarrolladores web manipular y actualizar dinámicamente el contenido, la estructura y el estilo de una página web sin necesidad de recargarla.
