@@ -266,6 +266,70 @@ persona[nombre] = "Pedro" // Actualiza el nombre a "Pedro"
 delete persona[edad] // Elimina la propiedad "edad"
 ```
 ## 7. es6
+### arrow functions
+Es una forma concisa y moderna de definir funciones en JavaScript. Se caracteriza por usar el símbolo => (flecha) en lugar de la palabra clave "function".
+```js
+const sumar = (a, b) => a + b;
+```
+### destructuring
+Permite extraer valores de arrays o propiedades de objetos y asignarlos a variables de manera más concisa y legible.
+```js
+let persona = {
+  nombre: "Juan",
+  edad: 30,
+};
+
+let { nombre, edad } = persona;
+console.log(nombre);
+```
 ## 8. DOM (Document Object Model) (Modelo de objetos del documento)
 Es una interfaz de programación para documentos HTML y XML. Representa la página para que los programas puedan cambiar la estructura del documento, estilo y contenido. El DOM proporciona una representación estructurada del documento como un árbol de nodos y objetos, lo que permite a los lenguajes de programación interactuar con el contenido, la estructura y los estilos de la página web.
 Es una API del navegador que permite a los desarrolladores web manipular y actualizar dinámicamente el contenido, la estructura y el estilo de una página web sin necesidad de recargarla.
+Nos permite comunicarnos entre HTML y JavaScript en objetos.
+### SELECCIONAR TRADICIONALES
+Estos selectores son metodos del documento por que DOM trabaja con documentos
+> [!TIP] 
+> En la programacion web `DAW` se hace uso de dos tecnicas:
+>
+> 1. Obtencion de datos (get)
+> 2. Cracion de datos (set)
+```js
+// Seleccionar por ID
+document.getElementById("id")
+// Seleccionar por su atributo name
+document.getElementsByName("nombre")
+// Seleccionar por clase
+document.getElementsByClassName("clase")
+// Seleccionar por etiqueta 
+document.getElementsByTagName("h1")
+```
+### SELECCIONAR MODERNOS
+Estos selectores son metodos del documento por que DOM trabaja con documentos
+```js
+// Seleccionar por ID
+document.querySelector("#id")
+// Seleccionar por su atributo name
+document.querySelector("[name='nombre']")
+// Seleccionar por clase
+document.querySelector(".clase")
+// Seleccionar por etiqueta 
+document.querySelector("h1")
+```
+Para acceder a todos los elementos que coincidan con el selector y devuelva en un array usamos `querySelectorAll`
+```js
+document.querySelectorAll(".clase")
+```
+### ACCEDER CONTENIDO Y ACTUALIZAR CONTENIDO
+Para acceder al contenido de un elemento HTML usamos la propiedad `innerHTML` o `textContent` si deseamos actualizar el contenido de un elemento HTML usamos la misma propiedad `innerHTML` o `textContent` y le asignamos el nuevo valor.
+```js
+let elemento = document.querySelector("#id");
+console.log(elemento.textContent); 
+elemento.textContent = "Nuevo contenido";
+console.log(elemento.textContent); 
+```
+```js
+let elemento = document.querySelector("#id");
+console.log(elemento.innerHTML);
+elemento.innerHTML = "<p>Nuevo contenido</p>";
+console.log(elemento.innerHTML);
+```
