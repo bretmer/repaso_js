@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hola soy un titulo</h1>
+    <p>este es un parrafo</p>
+    <button onclick="alert('submit')">Agregar</button>
+    <h2>Hola soy un subtitulo</h2>
+    <button onclick="">Eliminar</button>
+    <script>
+        const buttonEliminar = document.querySelectorAll('button')[1];
+        buttonEliminar.onclick = function() {
+            const h2 = document.querySelector('h2');
+            h2.remove();
+        }
+    </script>
+</body>
+
+</html>
