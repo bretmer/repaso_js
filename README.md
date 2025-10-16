@@ -286,7 +286,8 @@ console.log(nombre);
 Es una interfaz de programación para documentos HTML y XML. Representa la página para que los programas puedan cambiar la estructura del documento, estilo y contenido. El DOM proporciona una representación estructurada del documento como un árbol de nodos y objetos, lo que permite a los lenguajes de programación interactuar con el contenido, la estructura y los estilos de la página web.
 Es una API del navegador que permite a los desarrolladores web manipular y actualizar dinámicamente el contenido, la estructura y el estilo de una página web sin necesidad de recargarla.
 Nos permite comunicarnos entre HTML y JavaScript en objetos.
-### SELECCIONAR TRADICIONALES
+### SELECTORES
+#### SELECCIONAR TRADICIONALES
 Estos selectores son metodos del documento por que DOM trabaja con documentos
 > [!TIP] 
 > En la programacion web `DAW` se hace uso de dos tecnicas:
@@ -303,7 +304,7 @@ document.getElementsByClassName("clase")
 // Seleccionar por etiqueta 
 document.getElementsByTagName("h1")
 ```
-### SELECCIONAR MODERNOS
+#### SELECCIONAR MODERNOS
 Estos selectores son metodos del documento por que DOM trabaja con documentos
 ```js
 // Seleccionar por ID
@@ -319,7 +320,7 @@ Para acceder a todos los elementos que coincidan con el selector y devuelva en u
 ```js
 document.querySelectorAll(".clase")
 ```
-### ACCEDER CONTENIDO Y ACTUALIZAR CONTENIDO
+#### ACCEDER, ACTUALIZAR CONTENIDO, CREAR Y REMOVER ATRIBUTOS 
 Para acceder al contenido de un elemento HTML usamos la propiedad `innerHTML` o `textContent` si deseamos actualizar el contenido de un elemento HTML usamos la misma propiedad `innerHTML` o `textContent` y le asignamos el nuevo valor.
 ```js
 let elemento = document.querySelector("#id");
@@ -333,3 +334,74 @@ console.log(elemento.innerHTML);
 elemento.innerHTML = "<p>Nuevo contenido</p>";
 console.log(elemento.innerHTML);
 ```
+
+
+Una vez ya conocido la forma de capturar elementos `HTML` y la forma de setear contenidos (`textContent`) y html (`innerHTML`), tambien podemos setear atributos y removerlos.
+```js
+// <div id="contenido">contenido</div>
+let contenido = document.querySelector("#contenido");
+// <div id="contenido" data-nuevo-atributo="valor">contenido</div>
+contenido.setAttribute("data-nuevo-atributo", "valor"); 
+// eliminar atributo
+// <div id="contenido">contenido</div>
+contenido.removeAttribute("data-atributo-a-eliminar");
+```
+#### AGREGAR Y ELIMINAR ELEMENTOS HTML
+Usamos el metodo `createElement` para crear un nuevo elemento HTML y luego usamos el metodo `appendChild` para agregarlo al DOM. Para eliminar un elemento usamos el metodo `remove`.
+```js
+// Crear un nuevo elemento
+let nuevoElemento = document.createElement("p");
+nuevoElemento.textContent = "Nuevo párrafo";
+document.body.appendChild(nuevoElemento);
+
+// Eliminar un elemento
+let elementoAEliminar = document.querySelector("#elemento-a-eliminar");
+elementoAEliminar.remove();
+```
+#### MODIFICAR CLASES Y ESTILOS
+Estos metodos que veremos a continuacion nos permitira cambiar de manera intercativa los estilos css que se pueda aplicar a ciertos elementos pero haciendo uso de JavaScript y logrando sus cambios de manera dinamica.
+Con estos metodos agragamos  clases que exixten.
+- archivo `index.html`
+```html
+<body>
+  <section id="principal"></section>
+<body>
+```
+- archivo `styles.css`
+```css
+.color-fondo-rojo {
+  background-color: red;
+}
+```
+- archivo `script.js`
+```js
+// Agregar una el fondo de color rojo a la seccion
+let seccion = document.querySelector("#principal");
+seccion.classList.add("color-fondo-rojo");
+// Remover la clase que le da el fondo de color rojo a la seccion
+seccion.classList.remove("color-fondo-rojo");
+```
+### EVENTOS (Tarea-averiguar)
+Los eventos son acciones o sucesos que ocurren en el sistema, los cuales pueden ser detectados y manejados por el programa.
+Son una forma de controlar el flujo de nuestro programa, permitiendo que ciertas partes del código se ejecuten en respuesta a acciones del usuario o cambios en el estado de la aplicación.
+
+Esto se puede trabajar con un `estructura de decision` o puedo trabajar con una `estructura de repeticion` dependiendo del caso.
+Existen situaciones en las cuales queremos que nuestro codigo se ejecute cuando el usuario haga una accion, para esto usamos los **`eventos`**.
+> [!TIP]¿Qué es un evento?
+> Un evento es una notificacion de una caracteristica que acaba de suceder, o una funcionalidad  de una accion que acaba de ocurrir.  
+#### TIPOS DE EVENTOS
+- `click:` Se activa cuando se hace clic en un elemento.
+- `keydown:` Se activa cuando se presiona una tecla.
+- `play:` Se activa cuando un elemento multimedia comienza a reproducirse.
+- `wheel:` Se activa cuando se usa la rueda del ratón.
+- `beforeprint:` Se activa antes de que se imprima el documento.
+#### EVENTOS DESDE HTML
+```html
+<button onclick="alert('hola')">Saludar</button>
+```
+#### EVENTOS DESDE JAVASCRIPT
+```js
+let boton = document.querySelector("button");
+boton.addEventListener("click", function() {
+    alert("¡Botón clickeado!");
+});
